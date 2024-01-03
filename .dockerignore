@@ -1,0 +1,14 @@
+# Ignore the the following directories
+__pycache__/
+.venv/
+
+doc/
+db/
+models/
+miscellaneous/
+
+# Ignore the environment variables
+.env
+
+# Ignore any additional files
+git_commands.md

@@ -1,0 +1,11 @@
+cohere==4.37
+tiktoken==0.5.2
+regex==2023.10.3
+ctransformers==0.2.27
+langchain==0.0.348
+openai==1.3.8
+python-dotenv==1.0.0
+tqdm==4.66.1
+chromadb==0.4.18
+requests==2.31.0
+tqdm==4.66.1

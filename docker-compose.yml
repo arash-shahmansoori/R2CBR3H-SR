@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  retrieval:
+    build: .
+    volumes:
+      - data_volume:/data
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - COHERE_API_KEY=${COHERE_API_KEY}
+    depends_on:
+      - init-volume
+  
+  init-volume:
+    image: busybox
+    volumes:
+      - data_volume:/data
+      - ./db:/db
+    command: sh -c "cp -a /db/. /data"
+    healthcheck:
+      test: ["CMD", "test", "-f", "data/*"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    
+volumes:
+  data_volume:
+
